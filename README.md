@@ -279,7 +279,7 @@ However, average ratings should be considered alongside the number of ratings, n
 
 ## 4. App Size vs. Number of Installs
 
-![App Size vs Number of Installs](Images/App-Size-vs-Number-of-Inastalls.png)
+![App Size vs Number of Installs](Images/App-Size-vs-Number-of-Installs.png)
 
 ### What the visualization shows
 
@@ -337,7 +337,7 @@ This type of skewed distribution demonstrates why average price alone can be mis
 
 # 💰 Estimated Commercial Value Proxy
 
-![Estimated Gross-Value Proxy by Category](Images/Estimate-Revenue-by-Category.png)
+![Estimated Gross-Value Proxy by Category](Images/Estimated-Revenue-by-Category.png)
 
 ### What the visualization shows
 
