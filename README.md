@@ -225,7 +225,7 @@ Business Insights
 
 ## 1. App Count by Google Play Category
 
-![App Count by Google Play Category](Images/category-count.png)
+![App Count by Google Play Category](Images/App-Count-by-Google-Play-Store.png)
 
 ### What the visualization shows
 
@@ -243,7 +243,7 @@ Therefore, category size should not be interpreted as an opportunity by itself. 
 
 ## 2. Distribution of Google Play App Ratings
 
-![Distribution of Google Play App Ratings](Images/rating-distribution.png)
+![Distribution of Google Play App Ratings](Images/Distribution-of-Google-Play-App-Ratings.png)
 
 ### What the visualization shows
 
@@ -261,7 +261,7 @@ However, a rating alone does not tell the full story. An application with a 4.5 
 
 ## 3. Average App Rating by Category
 
-![Average App Rating by Category](Images/average-rating-category.png)
+![Average App Rating by Category](Images/Average-App-Rating-by-Category.png)
 
 ### What the visualization shows
 
@@ -279,7 +279,7 @@ However, average ratings should be considered alongside the number of ratings, n
 
 ## 4. App Size vs. Number of Installs
 
-![App Size vs Number of Installs](Images/size-vs-installs.png)
+![App Size vs Number of Installs](Images/App-Size-vs-Number-of-Inastalls.png)
 
 ### What the visualization shows
 
@@ -299,7 +299,7 @@ This suggests that application size alone is unlikely to explain adoption. Other
 
 ## 5. Free vs. Paid Applications
 
-![Free vs Paid App Distribution](Images/free-vs-paid.png)
+![Free vs Paid App Distribution](Images/Free-vs-Paid-App-Distribution.png)
 
 ### What the visualization shows
 
@@ -319,7 +319,7 @@ For developers and product teams, this highlights the importance of considering 
 
 ## 6. Distribution of Prices for Paid Applications
 
-![Distribution of Prices for Paid Apps](Images/price-distribution-paid.png)
+![Distribution of Prices for Paid Apps](Images/Distribution-of-Price-for-Paid-Apps.png)
 
 ### What the visualization shows
 
@@ -337,7 +337,7 @@ This type of skewed distribution demonstrates why average price alone can be mis
 
 # 💰 Estimated Commercial Value Proxy
 
-![Estimated Gross-Value Proxy by Category](Images/estimated-value-category.png)
+![Estimated Gross-Value Proxy by Category](Images/Estimate-Revenue-by-Category.png)
 
 ### What the visualization shows
 
@@ -406,7 +406,7 @@ Combining both perspectives gives a richer understanding of user feedback.
 
 # 📈 Average VADER Sentiment Score by Category
 
-![Average VADER Sentiment Score by App Category](Images/sentiment-score-category.png)
+![Average VADER Sentiment Score by App Category](Images/Average-Vader-Sentiment-Score-by-App-Category.png)
 
 ### What the visualization shows
 
@@ -426,7 +426,7 @@ This can be useful for identifying categories where customer feedback appears pa
 
 # 💬 Sentiment Mix by App Category
 
-![Sentiment Mix by App Category](Images/sentiment-mix-category.png)
+![Sentiment Mix by App Category](Images/Sentiment-Mix-by-App-Category.png)
 
 ### What the visualization shows
 
