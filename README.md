@@ -14,7 +14,7 @@
 </p>
 
 <div align="center">
-  <img src="Images/App-Count-by-Google-Play-Category.png" alt="Google Play Store Category Analysis" width="800"/>
+  <img src="Images/Google-Play-Store-Analysis-Dashboard.png"/>
 </div>
 
 ## 📚 Table of Contents
