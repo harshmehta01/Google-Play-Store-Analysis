@@ -307,7 +307,9 @@ google-play-store-analysis.ipynb
 
 ### App Count by Google Play Category
 
-![App Count by Google Play Category](Images/App-Count-by-Google-Play-Category.png)
+<div align="center">
+  <img src="Images/App-Count-by-Google-Play-Category.png"/>
+</div>
 
 ### 📌 What the visualization shows
 
