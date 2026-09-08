@@ -331,7 +331,9 @@ google-play-store-analysis.ipynb
 
 ### Distribution of Google Play App Ratings
 
-![Distribution of Google Play App Ratings](Images/Distribution-of-Google-Play-App-Ratings.png)
+<div align="center">
+  <img src="Images/Distribution-of-Google-Play-App-Ratings.png"/>
+</div>
 
 ### 📌 What the visualization shows
 
@@ -347,7 +349,9 @@ google-play-store-analysis.ipynb
 
 ### Average App Rating by Category
 
-![Average App Rating by Category](Images/Average-App-Rating-by-Category.png)
+<div align="center">
+  <img src="Images/Average-App-Rating-by-Category.png"/>
+</div>
 
 ### 📌 What the visualization shows
 
@@ -366,7 +370,9 @@ google-play-store-analysis.ipynb
 
 ## 📱 App Size vs. Installs
 
-![App Size vs Number of Installs](Images/App-Size-vs-Number-of-Installs.png)
+<div align="center">
+  <img src="Images/App-Size-vs-Number-of-Installs.png"/>
+</div>
 
 ### 📌 What the visualization shows
 
@@ -387,7 +393,9 @@ google-play-store-analysis.ipynb
 
 ### Free vs. Paid Applications
 
-![Free vs Paid App Distribution](Images/Free-vs-Paid-App-Distribution.png)
+<div align="center">
+  <img src="Images/Images/Free-vs-Paid-App-Distribution.png"/>
+</div>
 
 ### 📌 What the visualization shows
 
@@ -403,7 +411,9 @@ google-play-store-analysis.ipynb
 
 ### Distribution of Prices for Paid Applications
 
-![Distribution of Prices for Paid Apps](Images/Distribution-of-Price-for-Paid-Apps.png)
+<div align="center">
+  <img src="Images/Distribution-of-Price-for-Paid-Apps.png"/>
+</div>
 
 ### 📌 What the visualization shows
 
@@ -421,7 +431,9 @@ google-play-store-analysis.ipynb
 
 ## 💵 Estimated Commercial Value Proxy
 
-![Estimated Gross-Value Proxy by Category](Images/Estimated-Revenue-by-Category.png)
+<div align="center">
+  <img src="Images/Estimated-Revenue-by-Category.png"/>
+</div>
 
 ### 📌 What the visualization shows
 
@@ -472,7 +484,9 @@ Estimated Gross-Value Proxy = Installs × Listed Price
 
 ## 📈 Average VADER Sentiment Score by Category
 
-![Average VADER Sentiment Score by App Category](Images/Average-Vader-Sentiment-Score-by-App-Category.png)
+<div align="center">
+  <img src="Images/Average-Vader-Sentiment-Score-by-App-Category.png"/>
+</div>
 
 ### 📌 What the visualization shows
 
@@ -493,7 +507,9 @@ Estimated Gross-Value Proxy = Installs × Listed Price
 
 ### Sentiment Mix by App Category
 
-![Sentiment Mix by App Category](Images/Sentiment-Mix-by-App-Category.png)
+<div align="center">
+  <img src="Images/Sentiment-Mix-by-App-Category.png"/>
+</div>
 
 ### 📌 What the visualization shows
 
