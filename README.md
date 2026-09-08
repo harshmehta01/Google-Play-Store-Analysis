@@ -1,54 +1,124 @@
 # 📱 Google Play Store Analysis
+## 📊 Exploratory Data Analysis of the Android App Market
 
-## Exploratory Data Analysis of the Android App Market
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11+-blue" />
+  <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-blue" />
+  <img src="https://img.shields.io/badge/NumPy-Numerical%20Analysis-lightblue" />
+  <img src="https://img.shields.io/badge/Matplotlib-Visualization-orange" />
+  <img src="https://img.shields.io/badge/Seaborn-Visualization-lightblue" />
+  <img src="https://img.shields.io/badge/Plotly-Interactive%20Charts-purple" />
+  <img src="https://img.shields.io/badge/NLTK-VADER%20Sentiment-green" />
+  <img src="https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter" />
+  <img src="https://img.shields.io/badge/OS-Windows-blue?logo=windows" />
+</p>
 
-An end-to-end exploratory data analysis project investigating the Google Play Store app market using Python, Pandas, NumPy, Matplotlib, Seaborn, Plotly, and VADER sentiment analysis.
+<div align="center">
+  <img src="Images/App-Count-by-Google-Play-Category.png" alt="Google Play Store Category Analysis" width="800"/>
+</div>
 
-The project combines structured app-level data with user review text to explore application categories, ratings, installations, app size, pricing, and user sentiment. The goal is to turn raw marketplace data into clear, data-driven findings that could support product, marketing, and business decisions.
+## 📚 Table of Contents
+
+- [📌 Introduction](#-introduction)
+- [📌 What the Project Does](#-what-the-project-does)
+- [🌟 Why the Project is Useful](#-why-the-project-is-useful)
+- [🎯 Business Questions](#-business-questions)
+- [🛠️ Tools and Technologies](#️-tools-and-technologies)
+- [📂 Dataset](#-dataset)
+  - [📥 Dataset Loading](#-dataset-loading)
+  - [🔗 Dataset Source](#-dataset-source)
+  - [📊 Dataset Structure](#-dataset-structure)
+- [🧹 Data Cleaning and Preparation](#-data-cleaning-and-preparation)
+- [🚀 How to Get Started](#-how-to-get-started)
+- [📊 Exploratory Data Analysis](#-exploratory-data-analysis)
+  - [📈 App Category Analysis](#-app-category-analysis)
+  - [⭐ Ratings Analysis](#-ratings-analysis)
+  - [📱 App Size vs. Installs](#-app-size-vs-installs)
+  - [💰 Pricing Analysis](#-pricing-analysis)
+  - [💵 Estimated Commercial Value Proxy](#-estimated-commercial-value-proxy)
+  - [🧠 Sentiment Analysis with VADER](#-sentiment-analysis-with-vader)
+  - [💬 Sentiment by Category](#-sentiment-by-category)
+- [📊 Interactive Visualization](#-interactive-visualization)
+- [📌 Key Data-Driven Insights](#-key-data-driven-insights)
+- [💼 Business Value](#-business-value)
+- [👥 Project Author](#-project-author)
 
 ---
 
-## 📌 Project Overview
+## 📌 Introduction
 
-The Google Play Store contains applications across many categories, business models, and user segments. This project analyzes a historical Google Play Store dataset to understand how apps differ in popularity, ratings, pricing, and user sentiment.
-
-The analysis follows a complete data analytics workflow:
-
-1. Load the app and review datasets
-2. Inspect data quality
-3. Clean and transform the raw data
-4. Explore app categories and marketplace composition
-5. Analyze ratings and installations
-6. Investigate application size and adoption
-7. Analyze free versus paid applications
-8. Examine paid-app pricing
-9. Apply VADER sentiment analysis to user reviews
-10. Compare sentiment across app categories
-11. Build static and interactive visualizations
-12. Translate findings into business-focused insights
-
-> **Note:** This is an exploratory analysis project using a historical dataset. The findings should be interpreted as observations about the dataset rather than a description of the current Google Play Store.
+- This project performs an end-to-end **Exploratory Data Analysis (EDA)** of the Google Play Store application market.
+- It combines:
+  - Structured app metadata.
+  - User review text for sentiment analysis.
+- The project demonstrates how raw marketplace data can be transformed into:
+  - Clean analytical datasets.
+  - Data visualizations.
+  - Business-oriented insights.
+- The dataset is historical, so findings should be interpreted as observations from the analyzed snapshot rather than a description of the current Google Play Store.
 
 ---
 
-# 🎯 Business Questions
+## 📌 What the Project Does
 
-The project investigates the following questions:
+- Loads app metadata and user-review data into separate Pandas DataFrames.
+- Performs data-quality checks using `.info()`, `.head()`, and missing-value audits.
+- Cleans and transforms:
+  - `Installs`
+  - `Price`
+  - `Size`
+  - `Reviews`
+  - `Rating`
+- Removes duplicate app records.
+- Standardizes category and genre text.
+- Analyses category saturation and marketplace composition.
+- Analyses ratings and installations.
+- Investigates app size versus installation volume.
+- Compares free and paid applications.
+- Examines paid-app pricing.
+- Calculates an exploratory `Installs × Price` gross-value proxy.
+- Applies **VADER sentiment analysis** to user reviews.
+- Compares sentiment across app categories.
+- Produces static Matplotlib/Seaborn visualizations.
+- Produces an interactive Plotly visualization.
+- Translates findings into developer-focused business insights.
 
-- Which Google Play Store categories contain the most applications?
+---
+
+## 🌟 Why the Project is Useful
+
+- 📱 **Market Understanding**
+  - Shows how applications are distributed across marketplace categories.
+- 🏆 **Competitive Analysis**
+  - Helps identify highly populated categories that may have stronger competition.
+- ⭐ **User Satisfaction**
+  - Combines ratings with review sentiment to understand user experience.
+- 💰 **Monetization Analysis**
+  - Examines free/paid distribution and paid-app pricing.
+- 🧠 **NLP Application**
+  - Demonstrates how unstructured review text can be incorporated into a data analytics workflow.
+- 📊 **Data Storytelling**
+  - Converts multiple metrics into visual and business-oriented findings.
+
+---
+
+## 🎯 Business Questions
+
+- Which categories contain the most applications?
+- Which categories appear most saturated?
 - How are app ratings distributed?
-- Which categories have the highest average ratings?
+- Which categories have the highest and lowest average ratings?
 - Is application size associated with installation volume?
 - What proportion of applications are free versus paid?
 - How are paid applications priced?
-- Which categories show the largest estimated gross-value proxy?
-- What does user review sentiment reveal?
-- How does sentiment vary across application categories?
-- Can ratings and review sentiment provide complementary insights?
+- Which categories have the largest estimated gross-value proxy?
+- What is the overall sentiment of user reviews?
+- Which categories show stronger or weaker user sentiment?
+- How can ratings and sentiment be used together to understand user experience?
 
 ---
 
-# 🛠️ Tools & Technologies
+## 🛠️ Tools and Technologies
 
 | Technology | Purpose |
 |---|---|
@@ -64,26 +134,17 @@ The project investigates the following questions:
 
 ---
 
-# 📂 Dataset
+## 📂 Dataset
 
-## Dataset used
+### 📥 Dataset Loading
 
-This project uses the **Google Play Store Apps** dataset, originally published as a Kaggle dataset.
+- The analysis uses:
+  - `googleplaystore.csv`
+  - `googleplaystore_user_reviews.csv`
+- The notebook does **not require Kaggle API credentials**.
+- Public copies are loaded from GitHub raw URLs.
 
-The analysis uses two CSV files:
-
-```text
-googleplaystore.csv
-googleplaystore_user_reviews.csv
-```
-
-## How the dataset is loaded
-
-The notebook does **not require Kaggle API credentials**.
-
-Instead, it attempts to retrieve public copies of the CSV files from GitHub raw URLs:
-
-### App metadata
+#### App metadata URLs
 
 ```python
 APP_URLS = [
@@ -92,7 +153,7 @@ APP_URLS = [
 ]
 ```
 
-### User reviews
+#### User review URLs
 
 ```python
 REVIEW_URLS = [
@@ -101,34 +162,28 @@ REVIEW_URLS = [
 ]
 ```
 
-The notebook tries the URLs in sequence and uses the first successfully loaded dataset.
+- The notebook attempts the URLs in sequence.
+- The first successfully loaded source is used.
+- If the public sources cannot be retrieved, the notebook uses a **synthetic fallback generator** so that the cleaning and analysis pipeline can still run.
+- The synthetic fallback recreates common Play Store data quirks such as:
+  - `10,000+`-style install values.
+  - `M`, `k`, and `Varies with device` size values.
+  - Missing ratings.
+  - Duplicate app rows.
+  - Missing review text.
+  - Free and paid applications.
 
-If the remote files cannot be retrieved, the notebook has a **synthetic fallback generator** that creates Play Store-like data with common data-quality characteristics such as:
+### 🔗 Dataset Source
 
-- `Installs` stored as values such as `10,000+`
-- App sizes stored using `M`, `k`, or `Varies with device`
-- Missing ratings
-- Duplicate app rows
-- Missing review text
-- Free and paid applications
+- Original dataset: **Google Play Store Apps**.
+- Kaggle source:
+  - https://www.kaggle.com/datasets/lava18/google-play-store-apps
+- The notebook uses public GitHub raw mirrors rather than direct Kaggle API access.
+- This avoids requiring a Kaggle API key or local Kaggle configuration.
 
-This fallback exists so that the entire data-cleaning and analysis pipeline remains executable even when the public CSV mirrors are unavailable.
+### 📊 Dataset Structure
 
-## Original dataset source
-
-The original dataset is available on Kaggle:
-
-https://www.kaggle.com/datasets/lava18/google-play-store-apps
-
-> **Data-source note:** The notebook uses public GitHub mirrors for loading the CSV files rather than downloading directly from Kaggle. This avoids requiring a Kaggle API key or local Kaggle configuration.
-
----
-
-# 📊 Dataset Structure
-
-## App-level data
-
-Important fields include:
+#### App-level data
 
 - `App`
 - `Category`
@@ -141,9 +196,7 @@ Important fields include:
 - `Content Rating`
 - `Genres`
 
-## Review-level data
-
-Important fields include:
+#### Review-level data
 
 - `App`
 - `Translated_Review`
@@ -151,669 +204,407 @@ Important fields include:
 - `Sentiment_Polarity`
 - `Sentiment_Subjectivity`
 
-The app and review datasets are connected through the `App` field so that review sentiment can be analyzed by application category.
+#### Dataset relationship
+
+- The `App` column is used to connect reviews with app metadata.
+- This makes category-level review sentiment analysis possible.
 
 ---
 
-# 🧹 Data Cleaning & Preparation
-
-Real-world datasets frequently contain missing, duplicated, inconsistent, or incorrectly formatted values. Before analysis, the raw data was cleaned and transformed.
+## 🧹 Data Cleaning and Preparation
 
 ### Main cleaning steps
 
-- Inspected dataset structure and data types
-- Audited missing values
-- Removed duplicate app records
-- Handled missing ratings
-- Cleaned installation counts
-- Removed characters such as `+` and `,` from installation values
-- Converted installations to numeric values
-- Converted application size to MB
-- Handled values expressed in KB and MB
-- Converted `Varies with device` values to missing
-- Cleaned price values
-- Removed currency symbols
-- Converted prices to numeric values
-- Identified free versus paid applications
-- Cleaned review text
-- Removed/handled missing review text
-- Prepared review data for sentiment analysis
+- Inspected dataset structure and data types.
+- Audited missing values.
+- Removed duplicate application records.
+- Converted `Installs` values such as `10,000+` to numeric values.
+- Removed commas and plus signs from installation values.
+- Converted `Price` to numeric values.
+- Removed currency symbols.
+- Converted application `Size` into MB.
+- Converted `k` values into MB.
+- Converted `Varies with device` into missing values.
+- Fixed the `Reviews` data type.
+- Converted malformed numeric values to missing values instead of allowing the analysis to fail.
+- Standardized category and genre text.
+- Cleaned review text.
+- Excluded missing review text from sentiment scoring.
 
-### Why this matters
+### Why the cleaning matters
 
-Cleaning is important because analytical conclusions can be misleading when numeric values are stored as text, duplicates are present, or missing values are handled inconsistently.
-
-The goal was to create consistent variables that could be reliably compared across applications and categories.
-
----
-
-# 🔄 Analysis Workflow
-
-The project follows this analytical workflow:
-
-```text
-Dataset
-   ↓
-Data Loading
-   ↓
-Data Quality Assessment
-   ↓
-Data Cleaning & Transformation
-   ↓
-Exploratory Data Analysis
-   ↓
-Category Analysis
-   ↓
-Ratings Analysis
-   ↓
-Size & Install Analysis
-   ↓
-Pricing Analysis
-   ↓
-VADER Sentiment Analysis
-   ↓
-Category-Level Sentiment Analysis
-   ↓
-Visualization
-   ↓
-Business Insights
-```
+- Numeric analysis requires consistent data types.
+- Duplicate records can distort category counts and aggregated metrics.
+- Treating `Varies with device` as numeric would introduce incorrect measurements.
+- Preserving genuinely missing ratings avoids fabricating user feedback.
+- Clean review text provides a more reliable input for sentiment analysis.
 
 ---
 
-# 📈 Exploratory Data Analysis
+## 🚀 How to Get Started
 
-## 1. App Count by Google Play Category
+### 📦 Step 1: Install Python
 
-![App Count by Google Play Category](Images/App-Count-by-Google-Play-Category.png)
-
-### What the visualization shows
-
-This horizontal bar chart compares the number of applications represented in each Google Play Store category.
-
-The **FAMILY** category has the largest number of applications in the analyzed dataset, followed by **GAME** and **TOOLS**. The distribution is highly uneven, with some categories containing substantially more applications than others.
-
-### Business interpretation
-
-A large number of applications in a category can indicate strong consumer interest, but it can also indicate greater competition.
-
-Therefore, category size should not be interpreted as an opportunity by itself. A stronger market assessment would combine category size with installation volume, ratings, review sentiment, monetization, and competitive intensity.
-
----
-
-## 2. Distribution of Google Play App Ratings
-
-![Distribution of Google Play App Ratings](Images/Distribution-of-Google-Play-App-Ratings.png)
-
-### What the visualization shows
-
-The rating distribution is concentrated toward the upper end of the 1–5 rating scale.
-
-A large proportion of applications have ratings around **4.0–4.5**, while relatively few applications have ratings at the very low end of the scale.
-
-### Business interpretation
-
-High ratings are common in the dataset, suggesting that many applications receive generally positive user evaluations.
-
-However, a rating alone does not tell the full story. An application with a 4.5 rating from a small number of reviews may provide less evidence of broad user satisfaction than an application with a similar rating supported by a much larger review base.
-
----
-
-## 3. Average App Rating by Category
-
-![Average App Rating by Category](Images/Average-App-Rating-by-Category.png)
-
-### What the visualization shows
-
-This chart ranks app categories by their average rating. Categories are filtered to include at least five rated applications, reducing the effect of extremely small categories.
-
-Categories such as **EVENTS, EDUCATION, ART_AND_DESIGN, BOOKS_AND_REFERENCE, and PERSONALIZATION** appear near the top of the ranking, while **DATING, MAPS_AND_NAVIGATION, and TOOLS** appear closer to the lower end.
-
-### Business interpretation
-
-Differences in average ratings can highlight categories where users appear more or less satisfied.
-
-However, average ratings should be considered alongside the number of ratings, number of installations, and review sentiment. A category with a high average rating is not automatically more successful commercially.
-
----
-
-## 4. App Size vs. Number of Installs
-
-![App Size vs Number of Installs](Images/App-Size-vs-Number-of-Installs.png)
-
-### What the visualization shows
-
-This scatter plot examines application size in MB against installation volume.
-
-The installation variable is displayed on a logarithmic scale because installation counts vary substantially across applications. The plot shows applications of many different sizes achieving both low and high installation volumes.
-
-### Business interpretation
-
-There is no obvious simple relationship in the visualization where larger applications consistently receive more installations.
-
-This suggests that application size alone is unlikely to explain adoption. Other factors such as app functionality, category, brand awareness, user experience, marketing, and app quality may be more influential.
-
-> **Important:** A visual association or correlation does not establish causation.
-
----
-
-## 5. Free vs. Paid Applications
-
-![Free vs Paid App Distribution](Images/Free-vs-Paid-App-Distribution.png)
-
-### What the visualization shows
-
-The marketplace is strongly dominated by free applications.
-
-Approximately **92.2% of applications are free**, while approximately **7.8% are paid** in the analyzed dataset.
-
-### Business interpretation
-
-The large difference between free and paid applications demonstrates how common free-to-download distribution is within this dataset.
-
-For developers and product teams, this highlights the importance of considering alternative monetization approaches such as advertising, subscriptions, or in-app purchases when using a free-download model.
-
-> **Note:** The dataset's `Type` field identifies whether an application is listed as free or paid. This analysis does not determine the complete monetization strategy of each app.
-
----
-
-## 6. Distribution of Prices for Paid Applications
-
-![Distribution of Prices for Paid Apps](Images/Distribution-of-Price-for-Paid-Apps.png)
-
-### What the visualization shows
-
-Among paid applications, prices are heavily concentrated toward the lower end of the observed range.
-
-A small number of high-priced applications create a long right tail and substantially extend the price range.
-
-### Business interpretation
-
-The distribution suggests that most paid applications use relatively low listed prices, while a small number of applications are positioned at much higher price points.
-
-This type of skewed distribution demonstrates why average price alone can be misleading and why distributions and outliers should be examined during pricing analysis.
-
----
-
-# 💰 Estimated Commercial Value Proxy
-
-![Estimated Gross-Value Proxy by Category](Images/Estimated-Revenue-by-Category.png)
-
-### What the visualization shows
-
-This analysis estimates a simple gross-value proxy by combining installation counts with listed application prices.
-
-The calculation is:
-
-```text
-Estimated Gross-Value Proxy = Installs × Listed Price
-```
-
-The chart shows **FAMILY** as the largest category under this proxy, followed by **LIFESTYLE**, **GAME**, and **FINANCE**.
-
-### Business interpretation
-
-The calculation provides a way to compare the potential commercial scale represented by different categories in the dataset.
-
-However, this is **not actual revenue**.
-
-It does not account for:
-
-- Google Play fees
-- Taxes
-- Discounts
-- Refunds
-- In-app purchases
-- Subscriptions
-- Advertising revenue
-- Actual conversion rates
-- Whether every installation resulted in a paid transaction
-- Differences between listed price and realized revenue
-
-Therefore, the metric should only be interpreted as an exploratory **gross-value proxy**.
-
----
-
-# 🧠 Sentiment Analysis with VADER
-
-The project extends the analysis beyond structured app metrics by examining the text of user reviews.
-
-The **VADER (Valence Aware Dictionary and sEntiment Reasoner)** sentiment analyzer was used to calculate sentiment scores for review text.
-
-The resulting sentiment scores can be used to classify reviews into:
-
-- **Positive**
-- **Neutral**
-- **Negative**
-
-### Why sentiment analysis?
-
-A numerical rating tells us how highly a user rated an application, but review text can provide additional context about the user's experience.
-
-For example:
-
-```text
-Rating:
-How highly did the user rate the app?
-
-Sentiment:
-What emotional tone is expressed in the review?
-```
-
-Combining both perspectives gives a richer understanding of user feedback.
-
----
-
-# 📈 Average VADER Sentiment Score by Category
-
-![Average VADER Sentiment Score by App Category](Images/Average-Vader-Sentiment-Score-by-App-Category.png)
-
-### What the visualization shows
-
-This chart compares the average VADER compound sentiment score across app categories.
-
-Higher values represent more positive average review language, while lower values indicate relatively less positive sentiment.
-
-Categories such as **COMICS, EDUCATION, and AUTO_AND_VEHICLES** appear toward the higher end of the sentiment ranking, while **SOCIAL, NEWS_AND_MAGAZINES, and VIDEO_PLAYERS** appear toward the lower end.
-
-### Business interpretation
-
-Category-level sentiment can highlight differences in how users express their experiences across product areas.
-
-This can be useful for identifying categories where customer feedback appears particularly positive or where more negative feedback may warrant deeper investigation.
-
----
-
-# 💬 Sentiment Mix by App Category
-
-![Sentiment Mix by App Category](Images/Sentiment-Mix-by-App-Category.png)
-
-### What the visualization shows
-
-This stacked bar chart shows the proportion of positive, neutral, and negative reviews across application categories.
-
-The chart makes it possible to compare not only the average sentiment score but also the composition of review sentiment within each category.
-
-### Business interpretation
-
-Most categories contain a substantial positive-review share, but the balance of positive, neutral, and negative reviews varies.
-
-This provides a more detailed perspective than looking only at average sentiment because two categories could have similar average scores while having different distributions of positive and negative reviews.
-
----
-
-# 🔗 Connecting Ratings and Sentiment
-
-Ratings and sentiment should be viewed as complementary rather than interchangeable measures.
-
-| Metric | What it tells us |
-|---|---|
-| **Average Rating** | Numerical measure of user evaluation |
-| **Review Count** | Volume of explicit user feedback |
-| **VADER Sentiment** | Emotional tone of review language |
-| **Sentiment Mix** | Distribution of positive, neutral, and negative reviews |
-
-Combining structured and unstructured data therefore provides a stronger analytical perspective than relying on a single metric.
-
----
-
-# 📌 Key Data-Driven Insights
-
-## 1. Free applications dominate the dataset
-
-Approximately **92.2% of applications are free**, compared with **7.8% paid**.
-
-This shows that free-to-download applications represent the dominant distribution model within the analyzed dataset.
-
-## 2. The marketplace is concentrated in a small number of categories
-
-**FAMILY, GAME, and TOOLS** contain substantially more applications than many other categories.
-
-This indicates an uneven competitive landscape where some categories contain far more applications than others.
-
-## 3. Ratings are concentrated toward the higher end
-
-The majority of application ratings are concentrated around **4.0–4.5**.
-
-This suggests generally positive numerical evaluations across the dataset, although review volume and potential rating bias should be considered when interpreting this result.
-
-## 4. App size alone does not explain adoption
-
-The size-versus-install analysis shows that both small and relatively large applications can achieve high installation volumes.
-
-This indicates that app size by itself is unlikely to be a strong explanation for installation success.
-
-## 5. User sentiment differs across categories
-
-VADER sentiment analysis shows variation in average sentiment and sentiment composition across application categories.
-
-This demonstrates how NLP can complement traditional structured metrics and provide additional insight into user experience.
-
----
-
-# 💼 Business Value
-
-The techniques used in this project can support several real-world analytical use cases.
-
-### Product Managers
-
-Can investigate:
-
-- User satisfaction
-- Category performance
-- Review sentiment
-- Pricing patterns
-- Potential product improvement areas
-
-### App Developers
-
-Can examine:
-
-- Competitive category concentration
-- Installation patterns
-- Ratings
-- User feedback
-- Pricing structures
-
-### Marketing Teams
-
-Can investigate:
-
-- Categories with high adoption
-- User sentiment
-- Popular application segments
-- Potential market opportunities
-
-### Business Analysts
-
-Can combine:
-
-- App counts
-- Ratings
-- Installs
-- Pricing
-- Sentiment
-
-to develop a broader view of marketplace performance.
-
----
-
-# 📊 Interactive Visualization
-
-The notebook also includes an interactive Plotly visualization.
-
-The interactive category view compares metrics such as:
-
-- Number of apps
-- Total installs
-- Average rating
-- Average app size
-
-Interactive visualization allows users to explore category-level information dynamically rather than relying only on static charts.
-
-The README focuses on the most important static findings, while the Jupyter Notebook contains the complete analytical workflow and interactive visualization.
-
----
-
-# ⚠️ Limitations
-
-## Historical Dataset
-
-The Google Play Store dataset is a historical snapshot and does not necessarily represent the current marketplace.
-
-## Dataset Acquisition
-
-This repository does not depend on direct Kaggle API access. The notebook attempts to load the CSV files from public GitHub raw URLs and falls back to synthetic data if those sources are unavailable.
-
-If the synthetic fallback is used, numerical results should be treated as illustrative rather than findings from the original dataset.
-
-## Install Values
-
-Google Play Store installation values are reported in coarse buckets such as `10,000+`. Treating these values as exact counts introduces measurement error.
-
-## Rating Bias
-
-Users who leave ratings may not be representative of all application users.
-
-## Review Bias
-
-Users may be more likely to leave reviews after unusually positive or negative experiences.
-
-## Correlation vs. Causation
-
-Relationships identified through exploratory analysis should not be interpreted as proof of cause and effect.
-
-## VADER Limitations
-
-VADER is a rule-based sentiment model and may struggle with:
-
-- Sarcasm
-- Context-dependent language
-- Complex opinions
-- Mixed sentiment
-- Technical terminology
-- Domain-specific language
-
-## Revenue Proxy Limitation
-
-The `Installs × Price` calculation is only an exploratory gross-value proxy and should not be interpreted as actual revenue.
-
-## Missing and Inconsistent Data
-
-The original dataset contains data-quality issues that require cleaning and transformation. Some applications also have missing ratings or review information.
-
----
-
-# 🚀 Future Improvements
-
-## Data & Analytics
-
-- Use a newer Google Play Store dataset
-- Build an automated data collection pipeline
-- Analyze trends over time
-- Perform deeper statistical testing
-- Add outlier analysis
-- Investigate review volume versus ratings
-
-## NLP
-
-- Use transformer-based sentiment models
-- Compare VADER with machine-learning models
-- Perform topic modelling
-- Extract common themes from negative reviews
-- Identify recurring customer complaints
-- Classify reviews by topic
-
-## Machine Learning
-
-Potential predictive tasks include:
-
-- Predicting app ratings
-- Predicting installation ranges
-- Classifying high-performing applications
-- Predicting review sentiment
-- Identifying factors associated with app success
-
-## Business Intelligence
-
-A future version could add a Power BI dashboard containing:
-
-- Category KPIs
-- Installation analysis
-- Rating analysis
-- Pricing analysis
-- Sentiment analysis
-- Interactive filters
-- Executive-level insights
-
----
-
-# 📁 Project Structure
-
-```text
-google-play-store-analysis/
-│
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── google-play-store-analysis.ipynb
-│
-└── images/
-    ├── category-count.png
-    ├── rating-distribution.png
-    ├── size-vs-installs.png
-    ├── free-vs-paid.png
-    ├── average-rating-category.png
-    ├── price-distribution-paid.png
-    ├── estimated-value-category.png
-    ├── sentiment-score-category.png
-    └── sentiment-mix-category.png
-```
-
-> The `.venv/`, `venv/`, and `.ipynb_checkpoints/` directories should remain local and should not be uploaded to GitHub.
-
----
-
-# 💻 How to Run Locally
-
-## 1. Install Python
-
-Install Python 3.11 or later.
-
-Verify the installation:
+- Install **Python 3.11 or later**.
+- Verify the installation:
 
 ```bash
 python --version
 ```
 
----
+### 🌱 Step 2: Create a Virtual Environment
 
-## 2. Clone the repository
-
-```bash
-git clone https://github.com/harshmehta01/google-play-store-analysis.git
-```
-
-Move into the project directory:
-
-```bash
-cd google-play-store-analysis
-```
-
----
-
-## 3. Create a virtual environment
-
-On Windows:
+- Open a terminal inside the project folder.
+- Create the environment:
 
 ```bash
 python -m venv .venv
 ```
 
-Activate it:
+- Activate it on Windows:
 
 ```bash
 .venv\Scripts\activate
 ```
 
----
-
-## 4. Install dependencies
+### 📚 Step 3: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## 5. Start Jupyter Notebook
+### ▶️ Step 4: Launch Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-Open:
+### 📓 Step 5: Run the Analysis
+
+- Open:
 
 ```text
 google-play-store-analysis.ipynb
 ```
 
-Run the notebook from top to bottom.
+- Run the notebook from top to bottom.
+- The notebook performs:
+  - Data loading.
+  - Data inspection.
+  - Data cleaning.
+  - Exploratory analysis.
+  - Pricing analysis.
+  - Sentiment analysis.
+  - Category-level analysis.
+  - Interactive visualization.
+  - Final business conclusions.
 
 ---
 
-# 📦 Requirements
+# 📊 Exploratory Data Analysis
 
-The project uses the following main Python packages:
+## 📈 App Category Analysis
+
+### App Count by Google Play Category
+
+![App Count by Google Play Category](Images/App-Count-by-Google-Play-Category.png)
+
+### 📌 What the visualization shows
+
+- The chart compares the number of applications across Google Play Store categories.
+- **FAMILY** has the largest number of applications in the analyzed dataset.
+- **GAME** and **TOOLS** also contain substantially more applications than many other categories.
+- The distribution is highly uneven across categories.
+
+### 💼 Business interpretation
+
+- A large category can indicate strong demand.
+- It can also indicate stronger competition.
+- Category size should therefore not be treated as proof of market opportunity.
+- Category size is more useful when evaluated alongside installs, ratings, sentiment, pricing, and competitive positioning.
+
+---
+
+## ⭐ Ratings Analysis
+
+### Distribution of Google Play App Ratings
+
+![Distribution of Google Play App Ratings](Images/Distribution-of-Google-Play-App-Ratings.png)
+
+### 📌 What the visualization shows
+
+- Ratings are concentrated toward the upper end of the **1–5 scale**.
+- A large number of applications fall approximately within the **4.0–4.5** range.
+- Very low ratings occur less frequently.
+
+### 💼 Business interpretation
+
+- Highly rated applications are common in the dataset.
+- User experience and product quality are therefore important competitive considerations.
+- Ratings should be interpreted together with review volume because a high rating based on very few reviews may be less informative.
+
+### Average App Rating by Category
+
+![Average App Rating by Category](Images/Average-App-Rating-by-Category.png)
+
+### 📌 What the visualization shows
+
+- The chart ranks categories by average application rating.
+- Only categories with at least five rated applications are included.
+- **EVENTS, EDUCATION, ART_AND_DESIGN, BOOKS_AND_REFERENCE, and PERSONALIZATION** appear toward the higher end.
+- **DATING, MAPS_AND_NAVIGATION, and TOOLS** appear closer to the lower end.
+
+### 💼 Business interpretation
+
+- Category-level rating differences can indicate differences in reported user satisfaction.
+- Higher average ratings do not automatically imply higher commercial success.
+- Review volume, installs, and review sentiment should also be considered.
+
+---
+
+## 📱 App Size vs. Installs
+
+![App Size vs Number of Installs](Images/App-Size-vs-Number-of-Installs.png)
+
+### 📌 What the visualization shows
+
+- The scatter plot compares application size in MB with installation volume.
+- The installation axis uses a logarithmic scale because install counts span several orders of magnitude.
+- Both relatively small and larger applications can achieve high installation volumes.
+- There is no obvious simple visual pattern showing that larger applications consistently receive more or fewer installs.
+
+### 💼 Business interpretation
+
+- Application size alone does not appear sufficient to explain adoption.
+- Developers should consider functionality, category, user experience, marketing, brand awareness, and product quality alongside technical size.
+- Any statistical association should be interpreted as correlation, not causation.
+
+---
+
+## 💰 Pricing Analysis
+
+### Free vs. Paid Applications
+
+![Free vs Paid App Distribution](Images/Free-vs-Paid-App-Distribution.png)
+
+### 📌 What the visualization shows
+
+- Approximately **92.2%** of applications are free.
+- Approximately **7.8%** are paid.
+- The marketplace sample is therefore strongly dominated by free applications.
+
+### 💼 Business interpretation
+
+- Free-to-download applications are the dominant application type in this dataset.
+- Developers may therefore need to evaluate monetization models beyond a simple upfront price.
+- Possible models include advertising, subscriptions, and in-app purchases, although this dataset does not directly measure those models.
+
+### Distribution of Prices for Paid Applications
+
+![Distribution of Prices for Paid Apps](Images/Distribution-of-Price-for-Paid-Apps.png)
+
+### 📌 What the visualization shows
+
+- Paid-app prices are concentrated toward the lower end of the price range.
+- A small number of high-priced applications create a long right-hand tail.
+- The distribution is strongly skewed.
+
+### 💼 Business interpretation
+
+- Most paid applications use relatively low listed prices.
+- A small number of high-priced outliers can distort the mean.
+- Looking at the full price distribution is therefore more informative than relying on average price alone.
+
+---
+
+## 💵 Estimated Commercial Value Proxy
+
+![Estimated Gross-Value Proxy by Category](Images/Estimated-Revenue-by-Category.png)
+
+### 📌 What the visualization shows
+
+- The project calculates:
 
 ```text
-pandas
-numpy
-matplotlib
-seaborn
-nltk
-plotly
-jupyter
+Estimated Gross-Value Proxy = Installs × Listed Price
 ```
 
-They are listed in `requirements.txt`.
+- **FAMILY** has the largest estimated gross-value proxy.
+- **LIFESTYLE**, **GAME**, and **FINANCE** are among the next highest categories under this simplified calculation.
 
-Install everything with:
+### 💼 Business interpretation
 
-```bash
-pip install -r requirements.txt
-```
+- The calculation provides a simple method for comparing potential gross-value scale across categories.
+- It is **not actual revenue**.
+- It does not account for:
+  - Google Play fees.
+  - Taxes.
+  - Discounts.
+  - Refunds.
+  - In-app purchases.
+  - Subscriptions.
+  - Advertising revenue.
+  - Conversion rates.
+  - Differences between listed price and realized transaction value.
+- The measure is therefore intended only for exploratory comparison.
 
 ---
 
-# 💡 What I Learned
+## 🧠 Sentiment Analysis with VADER
 
-This project provided practical experience working with a real-world dataset that required significant preparation before analysis.
+- User reviews are analyzed as unstructured text.
+- **VADER (Valence Aware Dictionary and sEntiment Reasoner)** calculates a sentiment score for each usable review.
+- Reviews are classified as:
+  - **Positive**
+  - **Neutral**
+  - **Negative**
+- Sentiment is subsequently aggregated to category level.
 
-The project strengthened my ability to:
+### Why sentiment analysis?
 
-- Assess data quality before analysis
-- Clean and transform inconsistent datasets
-- Select appropriate visualizations for different analytical questions
-- Investigate relationships between variables
-- Analyze structured and unstructured data together
-- Apply NLP techniques to user reviews
-- Compare numerical ratings with textual sentiment
-- Communicate analytical findings clearly
-- Translate technical analysis into business-oriented insights
-
-One of the key lessons was that a single metric rarely tells the complete story.
-
-For example, application ratings provide a numerical measure of user evaluation, while review sentiment provides additional context about the language users use to describe their experience.
+- Ratings provide a numerical measure of user evaluation.
+- Review text provides additional context about what users are expressing.
+- Combining both can provide a richer view of user experience.
 
 ---
 
-# 🔮 Future Project Direction
+## 📈 Average VADER Sentiment Score by Category
 
-A natural next step would be to transform this exploratory analysis into a more complete **Google Play Store Market Intelligence Dashboard**.
+![Average VADER Sentiment Score by App Category](Images/Average-Vader-Sentiment-Score-by-App-Category.png)
 
-A potential future architecture could be:
+### 📌 What the visualization shows
 
-```text
-Google Play Store Data
-        +
-User Reviews
-        ↓
-Python Data Pipeline
-        ↓
-Data Cleaning & Transformation
-        ↓
-NLP / Sentiment Analysis
-        ↓
-SQL Data Model
-        ↓
-Power BI Dashboard
-        ↓
-Interactive Market Intelligence
-```
+- The chart compares average VADER compound sentiment across app categories.
+- Higher values represent more positive review language on average.
+- **COMICS, EDUCATION, and AUTO_AND_VEHICLES** appear toward the higher end.
+- **SOCIAL, NEWS_AND_MAGAZINES, and VIDEO_PLAYERS** appear toward the lower end.
 
-This would extend the project from exploratory analysis into a more production-oriented analytics and business intelligence solution.
+### 💼 Business interpretation
+
+- Category-level sentiment highlights differences in how users describe their experiences.
+- Lower sentiment can identify categories that may deserve deeper qualitative review.
+- Sentiment is best used as a complementary signal rather than a replacement for ratings or retention metrics.
 
 ---
 
-The notebook contains the full data preparation process, exploratory analysis, visualizations, sentiment analysis, and conclusions.
+## 💬 Sentiment by Category
+
+### Sentiment Mix by App Category
+
+![Sentiment Mix by App Category](Images/Sentiment-Mix-by-App-Category.png)
+
+### 📌 What the visualization shows
+
+- The stacked bars show the proportion of:
+  - Positive reviews.
+  - Neutral reviews.
+  - Negative reviews.
+- The chart allows comparison of sentiment composition across categories.
+- It provides more detail than average sentiment alone.
+
+### 💼 Business interpretation
+
+- Two categories can have similar average sentiment while having different positive/negative mixes.
+- A relatively larger negative segment can indicate an area worth investigating further.
+- The underlying review text should be examined before making product decisions.
+
+---
+
+## 🔗 Connecting Ratings and Sentiment
+
+| Metric | What it tells us |
+|---|---|
+| **Average Rating** | Numerical evaluation of an application |
+| **Review Count** | Volume of explicit user feedback |
+| **VADER Sentiment** | Emotional direction of review language |
+| **Sentiment Mix** | Distribution of positive, neutral, and negative reviews |
+
+- Ratings and sentiment should be treated as complementary signals.
+- Using structured and unstructured feedback together provides a broader view of user experience.
+
+---
+
+## 📊 Interactive Visualization
+
+- The notebook includes an interactive Plotly category visualization.
+- It compares category-level measures including:
+  - Number of applications.
+  - Total installs.
+  - Average rating.
+  - Average application size.
+- Interactive exploration is available directly inside the Jupyter Notebook.
+
+---
+
+## 📌 Key Data-Driven Insights
+
+### 1️⃣ Free applications dominate the dataset
+
+- **92.2%** of applications are free.
+- **7.8%** are paid.
+- Free-to-download applications therefore dominate the analyzed marketplace snapshot.
+
+### 2️⃣ Competition is uneven across categories
+
+- **FAMILY** contains the largest number of applications.
+- **GAME** and **TOOLS** are also highly populated.
+- Developers entering highly populated categories should pay close attention to differentiation and positioning.
+
+### 3️⃣ High ratings are common
+
+- Most ratings are concentrated around approximately **4.0–4.5**.
+- The market contains many highly rated applications.
+- Product quality and user satisfaction should therefore be treated as important competitive factors.
+
+### 4️⃣ App size alone does not explain adoption
+
+- Both smaller and larger applications achieve high install counts.
+- App size alone is therefore unlikely to explain installation success.
+
+### 5️⃣ User sentiment adds another analytical dimension
+
+- VADER sentiment varies across categories.
+- Review sentiment complements numerical ratings by analysing the language used by users.
+
+---
+
+## 💼 Business Value
+
+### 👨‍💻 App Developers
+
+- Evaluate category competition.
+- Benchmark ratings.
+- Explore pricing patterns.
+- Understand user sentiment.
+- Identify potential product-improvement areas.
+
+### 📦 Product Managers
+
+- Combine ratings and sentiment to understand user experience.
+- Compare category-level satisfaction.
+- Investigate potential product-quality issues.
+
+### 📣 Marketing Teams
+
+- Explore categories with strong installation volumes.
+- Examine user sentiment patterns.
+- Compare marketplace segments.
+
+### 📊 Business Analysts
+
+- Combine structured and unstructured datasets.
+- Build exploratory market analyses.
+- Communicate findings through visualizations.
+- Translate analytical results into business-focused insights.
+
+---
+
+## 👥 Project Author
+
+This project has been jointly developed by: **Harsh Mehta** – [harshmehtag524@gmail.com](mailto:harshmehtag524@gmail.com)  
+
+To contribute:
+- 💡 Fork the repository  
+- 🛠 Create a new feature branch  
+- 🔁 Submit a Pull Request (PR)  
+- 🐞 Or open an issue on the GitHub repository!
