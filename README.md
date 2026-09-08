@@ -394,7 +394,7 @@ google-play-store-analysis.ipynb
 ### Free vs. Paid Applications
 
 <div align="center">
-  <img src="Images/Images/Free-vs-Paid-App-Distribution.png"/>
+  <img src="Images/Free-vs-Paid-App-Distribution.png"/>
 </div>
 
 ### 📌 What the visualization shows
