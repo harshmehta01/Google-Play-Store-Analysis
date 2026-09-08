@@ -225,7 +225,7 @@ Business Insights
 
 ## 1. App Count by Google Play Category
 
-![App Count by Google Play Category](Images/App-Count-by-Google-Play-Store.png)
+![App Count by Google Play Category](Images/App-Count-by-Google-Play-Category.png)
 
 ### What the visualization shows
 
